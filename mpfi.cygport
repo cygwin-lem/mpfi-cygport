@@ -1,0 +1,70 @@
+NAME="mpfi"
+VERSION="1.5.3"
+RELEASE=1
+
+CATEGORY="Math Libs"
+SUMMARY="A multiple precision floating-point interval library"
+DESCRIPTION="\
+MPFI is a library for arbitrary precision interval arithmetic;
+it is written in C and is based on MPFR.
+"
+
+HOMEPAGE="https://gforge.inria.fr/projects/mpfi/"
+# GIT_REPO="https://gitlab.inria.fr/mpfi/mpfi"
+
+################################
+## Source
+################################
+declare -A SRC_URI_V=(
+  # cf. Project Filelist for MPFI: https://gforge.inria.fr/frs/?group_id=157
+  [1.5.3]="https://gforge.inria.fr/frs/download.php/file/37331/mpfi-1.5.3.tar.bz2"
+)
+SRC_URI="${SRC_URI_V[${VERSION}]}"
+SRC_DIR="${NAME}-${VERSION}"
+
+################################
+## Requirements for building
+################################
+BUILD_REQUIRES="\
+  libmpfr-devel\
+"
+
+################################
+## Packages
+################################
+PKG_NAMES="\
+  libmpfi0
+  libmpfi-devel
+  libmpfi-doc
+"
+
+libmpfi0_CATEGORY="${CATEGORY}"
+libmpfi0_SUMMARY="${SUMMARY}"
+libmpfi0_CONTENTS="\
+  usr/bin/
+"
+
+libmpfi_devel_CATEGORY="Devel ${CATEGORY}"
+libmpfi_devel_SUMMARY="${SUMMARY} (development)"
+libmpfi_devel_REQUIRES="\
+  libmpfr-devel\
+"
+libmpfi_devel_CONTENTS="\
+  usr/include/
+  usr/lib/
+"
+
+libmpfi_doc_CATEGORY="Doc ${CATEGORY}"
+libmpfi_doc_SUMMARY="${SUMMARY} (doc)"
+libmpfi_doc_CONTENTS="\
+  usr/share/doc/
+  usr/share/info/
+"
+
+################################
+## Install
+################################
+DOCS="\
+  COPYING*
+  README*
+"
