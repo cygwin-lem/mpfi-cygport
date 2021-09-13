@@ -26,7 +26,12 @@ SRC_DIR="${NAME}-${VERSION}"
 ################################
 # Patches
 ################################
-PATCH_URI+="
+# 1.5.4: cf. https://gitlab.inria.fr/mpfi/mpfi/-/issues/21774
+PATCH_URI+="\
+  https://gitlab.inria.fr/mpfi/mpfi/uploads/74f55b64015631c4380c6ebd4d4cfd9e/mpfi-mpfr.patch
+"
+# Patches for tests
+PATCH_URI+="\
   1.5.4-tests-exclude-type_iiii.patch
   1.5.4-tests-exclude-tdiv_ext.patch
   1.5.4-tests-exclude-trec_sqrt.patch
