@@ -1,0 +1,10 @@
+--- origsrc/mpfi-1.5.4/tests/mpfi-tests.h	2019-08-02 05:07:19.000000000 +0900
++++ src/mpfi-1.5.4/tests/mpfi-tests.h	2021-09-10 17:52:31.544209000 +0900
+@@ -28,6 +28,7 @@
+ #define __MPFI_TESTS_H__
+ 
+ #include <stdlib.h>
++#include <stdint.h>
+ 
+ #include "mpfi_io.h"
+ #include "mpfi-impl.h"

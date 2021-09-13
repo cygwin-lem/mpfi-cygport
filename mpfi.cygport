@@ -1,5 +1,5 @@
 NAME="mpfi"
-VERSION="1.5.3"
+VERSION="1.5.4"
 RELEASE=1
 
 CATEGORY="Math Libs"
@@ -17,10 +17,21 @@ HOMEPAGE="https://gforge.inria.fr/projects/mpfi/"
 ################################
 declare -A SRC_URI_V=(
   # cf. Project Filelist for MPFI: https://gforge.inria.fr/frs/?group_id=157
+  [1.5.4]="https://gforge.inria.fr/frs/download.php/file/38111/mpfi-1.5.4.tgz"
   [1.5.3]="https://gforge.inria.fr/frs/download.php/file/37331/mpfi-1.5.3.tar.bz2"
 )
 SRC_URI="${SRC_URI_V[${VERSION}]}"
 SRC_DIR="${NAME}-${VERSION}"
+
+################################
+# Patches
+################################
+PATCH_URI+="
+  1.5.4-tests-exclude-type_iiii.patch
+  1.5.4-tests-exclude-tdiv_ext.patch
+  1.5.4-tests-exclude-trec_sqrt.patch
+  1.5.4-tests-mpfi-tests.patch
+"
 
 ################################
 ## Requirements for building
@@ -59,6 +70,11 @@ libmpfi_doc_SUMMARY="${SUMMARY} (doc)"
 libmpfi_doc_CONTENTS="\
   usr/share/doc/
   usr/share/info/
+"
+
+DIFF_EXCLUDES="\
+  *.info
+  mpfi_config.h
 "
 
 ################################

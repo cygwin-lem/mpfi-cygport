@@ -1,0 +1,11 @@
+--- origsrc/mpfi-1.5.4/tests/Makefile.am	2019-08-02 05:15:53.000000000 +0900
++++ src/mpfi-1.5.4/tests/Makefile.am
+@@ -52,7 +52,7 @@
+     tis_zero tlog tlog10 tlog1p tlog2 tmag tmid tmig tmul	\
+     tmul_2exp tmul_2si tmul_2ui tmul_d tmul_fr tmul_q		\
+     tmul_si tmul_ui tmul_z tnan_p tneg tput_d tput_fr tput_q	\
+-    tput_si tput_ui tput_z tq_div tq_sub trec_sqrt tround_prec	\
++    tput_si tput_ui tput_z tq_div tq_sub tround_prec	\
+     tsec tsech tset tset_d tset_flt tset_fr tset_ld tset_q	\
+     tset_si tset_str tset_ui tset_z tsi_div tsi_sub tsin tsinh	\
+     tsqr tsqrt							\
