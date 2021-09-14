@@ -1,0 +1,7 @@
+category: Debug
+requires: cygwin-debuginfo
+external-source: mpfi
+sdesc: "Debug info for mpfi"
+ldesc: "This package contains files necessary for debugging the
+mpfi package with gdb."
+test:
