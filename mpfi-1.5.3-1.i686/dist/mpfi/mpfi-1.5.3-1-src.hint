@@ -1,0 +1,9 @@
+category: Math Libs
+build-depends: cygport   libmpfr-devel
+sdesc: "A multiple precision floating-point interval library"
+ldesc: "MPFI is a library for arbitrary precision interval arithmetic;
+it is written in C and is based on MPFR.
+"
+skip:
+
+homepage: https://gforge.inria.fr/projects/mpfi/
