@@ -1,0 +1,21 @@
+--- origsrc/mpfi-1.5.4/src/mpfi.h	2019-08-02 05:07:23.000000000 +0900
++++ src/mpfi-1.5.4/src/mpfi.h
+@@ -195,6 +195,7 @@ int     mpfi_sqr        (mpfi_ptr, mpfi_
+ int     mpfi_inv        (mpfi_ptr, mpfi_srcptr);
+ /* the sqrt of a (partially) negative interval is a NaN */
+ int     mpfi_sqrt       (mpfi_ptr, mpfi_srcptr);
++int     mpfi_rec_sqrt   (mpfi_ptr, mpfi_srcptr);
+ int     mpfi_cbrt       (mpfi_ptr, mpfi_srcptr);
+ /* the first interval contains the absolute values of */
+ /* every element of the second interval */
+--- origsrc/mpfi-1.5.4/tests/trec_sqrt.c	2019-08-02 05:16:55.000000000 +0900
++++ src/mpfi-1.5.4/tests/trec_sqrt.c
+@@ -31,7 +31,7 @@ main (int argc, char **argv)
+ {
+   struct mpfi_function_t i_rec_sqrt;
+ 
+-  mpfi_fun_init_I (&i_rec_sqrt, mpfr_rec_sqrt);
++  mpfi_fun_init_II (&i_rec_sqrt, mpfi_rec_sqrt, mpfr_rec_sqrt);
+   test_start ();
+ 
+   check_data (&i_rec_sqrt, "rec_sqrt.dat");

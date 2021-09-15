@@ -32,12 +32,12 @@ PATCH_URI+="\
 "
 # Patches for tests
 PATCH_URI+="\
+  1.5.4-rec_sqrt.patch
+  1.5.4-rec_sqrt-dat.patch
   1.5.4-tests-exclude-type_iiii.patch
   1.5.4-tests-exclude-tdiv_ext.patch
-  1.5.4-tests-exclude-trec_sqrt.patch
   1.5.4-tests-mpfi-tests.patch
 "
-
 ################################
 ## Requirements for building
 ################################
